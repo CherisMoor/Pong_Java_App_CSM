@@ -68,6 +68,7 @@ public class Pong extends Canvas {
     }
 
     public void processKeyEvent(KeyEvent e) {
+        // Player 1 paddle moves "W" "S"
         if (e.getID() == KeyEvent.KEY_PRESSED) {
             if (e.getKeyCode() == KeyEvent.VK_W) {
                 paddle1.y -= 10;
@@ -76,6 +77,7 @@ public class Pong extends Canvas {
                 paddle1.y += 10;
             }
         }
+        // Player 2 paddle moves arrows "UP" "DOWN"
         if (e.getID() == KeyEvent.KEY_PRESSED) {
             if (e.getKeyCode() == KeyEvent.VK_UP) {
                 paddle2.y -= 10;
@@ -103,13 +105,14 @@ public class Pong extends Canvas {
         if (ball.intersects(paddle2))
             delta.x = -delta.x;
 
-        // check for scoring
+        // check for scoring player 1
         if (ball.x > 1000) {
             ball.x = 500;
             ball.y = 350;
             delta = new Point(-5, 5);
             player1++;
         }
+        // check for scoring player 2
         if (ball.x < 0) {
             ball.x = 500;
             ball.y = 350;
