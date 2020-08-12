@@ -63,6 +63,7 @@ public class Pong extends Canvas {
         g2.setFont(new Font("Helvetica", 1, 25));
         // converts Integer(score) to a string for draw method
         g2.drawString("Player 1 Score: " + Integer.toString(player1), 50, 100);
+        g2.drawString("||", 475, 100);
         g2.drawString("Player 2 Score: " + Integer.toString(player2), 700, 100);
 
     }
